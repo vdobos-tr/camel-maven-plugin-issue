@@ -39,13 +39,18 @@
 		  </plugin>
 			<plugin>
 				<groupId>org.apache.camel</groupId>
-				<artifactId>camel-component-maven-plugin</artifactId>
+				<artifactId>camel-package-maven-plugin</artifactId>
 				<version>${camel.version}</version>
+				<configuration>
+					<!-- set to true to make build fail fast if missing documentation in 
+						docs files -->
+					<failFast>false</failFast>
+				</configuration>
 				<executions>
 					<execution>
-						<id>generate</id>
+						<id>generate-component</id>
 						<goals>
-							<goal>generate</goal>
+							<goal>generate-component</goal>
 						</goals>
 						<phase>process-classes</phase>
 					</execution>
